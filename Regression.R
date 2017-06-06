@@ -1,4 +1,6 @@
 rm(list=ls(all=TRUE))
+##################### Create a directory##################
+
 setwd("G:\\insofe\\20161126_Batch23_CSE7202c_Regression\\Lab Session")
 data<-read.csv(file = "CustomerData.csv",header = T,sep = ",")
 str(data)
