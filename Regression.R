@@ -1,11 +1,15 @@
 rm(list=ls(all=TRUE))
-##################### Create a directory##################
-
-setwd("G:\\insofe\\20161126_Batch23_CSE7202c_Regression\\Lab Session")
+##################### Set your working directory#########################################################
+setwd(" ")
+####################### ####################Read the data file############################################
 data<-read.csv(file = "CustomerData.csv",header = T,sep = ",")
+####################### Basic data statstics###############################################################
 str(data)
+######################Check for unuseful columns#############################################################
 data$CustomerID<-NULL
+##################### Change the attribute data type as per the requirement###################################
 data$City<-as.factor(x = data$City)
+
 require(corrplot)
 data_numeric=subset(x = data,select = -c(FavoriteChannelOfTransaction,FavoriteGame,City))
 cor(data_numeric)
